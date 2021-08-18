@@ -31,6 +31,6 @@ public class OrderEntity implements Serializable {
     private String orderId;
 
     @ColumnDefault(value = "CURRENT_TIMESTAMP")
-    @Column(nullable = false, updatable = false, insertable = false)
+    @Column(nullable = false, updatable = false)
     private Date createdAt;
 }

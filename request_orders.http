@@ -1,0 +1,10 @@
+### GET ORDERS
+POST http://localhost:8000/order-service/4fd351ed-f66f-4121-966e-708038926ebd/orders
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI0ZmQzNTFlZC1mNjZmLTQxMjEtOTY2ZS03MDgwMzg5MjZlYmQiLCJleHAiOjE2MjkzNjg2NzV9.L5dSKG3uOI_3tp8W6lLLkn0irL1tOnNKlwWwU7ejLw4h22oUWpe51AJr_ZC2Asdm06bGTrP4U-oy32SaEPHnAA
+Content-Type: application/json
+
+{
+  "productId" : "CATALOG-002",
+  "qty" : 30,
+  "unitPrice" : 1500
+}
