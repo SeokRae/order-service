@@ -6,6 +6,7 @@ import com.example.orderservice.application.dto.RequestOrder;
 import com.example.orderservice.application.dto.ResponseOrder;
 import com.example.orderservice.application.service.OrderService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/order-service")
 @RequiredArgsConstructor
@@ -29,6 +31,7 @@ public class OrderController {
         List<ResponseOrder> result = new ArrayList<>();
         orderList.forEach(orderEntity -> result.add(new ModelMapper().map(orderEntity, ResponseOrder.class)));
 
+        log.info("[Order] : {}", result);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 

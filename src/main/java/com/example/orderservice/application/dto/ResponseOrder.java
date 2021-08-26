@@ -3,6 +3,7 @@ package com.example.orderservice.application.dto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data

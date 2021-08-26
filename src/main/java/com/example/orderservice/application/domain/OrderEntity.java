@@ -2,6 +2,8 @@ package com.example.orderservice.application.domain;
 
 import lombok.Data;
 import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,6 +12,7 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "orders")
+@EntityListeners(AuditingEntityListener.class)
 public class OrderEntity implements Serializable {
     @Id
     @GeneratedValue
@@ -32,5 +35,6 @@ public class OrderEntity implements Serializable {
 
     @ColumnDefault(value = "CURRENT_TIMESTAMP")
     @Column(nullable = false, updatable = false)
+    @CreationTimestamp
     private Date createdAt;
 }
